@@ -257,15 +257,8 @@ a {
 .gumroad-placeholder {
   display: grid;
   gap: 14px;
-  max-width: 600px;
+  max-width: 980px;
   margin-top: 30px;
-}
-
-.gumroad-placeholder > p {
-  margin: 0;
-  color: var(--muted);
-  font-size: clamp(1rem, 1.45vw, 1.2rem);
-  font-weight: 800;
 }
 
 .hero-video {
@@ -372,20 +365,9 @@ a {
   pointer-events: none;
 }
 
-.signup-form,
 .contact-form {
   display: grid;
   gap: 10px;
-}
-
-.signup-form {
-  padding: 16px;
-  border: 1px solid rgba(115, 255, 112, 0.54);
-  border-radius: 6px;
-  background:
-    linear-gradient(135deg, rgba(20, 105, 42, 0.96), rgba(8, 21, 12, 0.94) 54%, rgba(132, 255, 82, 0.72)),
-    #0b2512;
-  box-shadow: 0 18px 50px rgba(86, 255, 62, 0.22);
 }
 
 label {
@@ -394,12 +376,6 @@ label {
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 8px;
 }
 
 input,
@@ -488,7 +464,7 @@ button:focus-visible {
 .tour-row,
 .merch-card,
 .listen-panel,
-.video-grid article,
+.video-track article,
 .contact-form {
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -532,6 +508,8 @@ button:focus-visible {
 .member-card {
   display: grid;
   gap: 10px;
+  text-align: center;
+  justify-items: center;
 }
 
 .member-portrait {
@@ -617,7 +595,7 @@ button:focus-visible {
 .tour-row p,
 .merch-card h3,
 .merch-card p,
-.video-grid h3 {
+.video-track h3 {
   margin: 0;
 }
 
@@ -723,23 +701,67 @@ button:focus-visible {
   border: 0;
 }
 
-.music-social-links {
+.hero-social-links {
   margin: 0;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-.video-grid {
+.hero-social-links a {
+  min-height: 52px;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 0.95rem;
+}
+
+.video-carousel {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+}
+
+.carousel-arrow {
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #0f0f0f;
+  color: var(--ink);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.carousel-arrow:hover,
+.carousel-arrow:focus-visible {
+  border-color: var(--hot);
+  background: var(--hot);
+  color: #050505;
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.video-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(300px, 36vw);
   gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 2px 14px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
 }
 
-.video-grid article {
+.video-track article {
   overflow: hidden;
+  scroll-snap-align: start;
 }
 
-.video-grid h3 {
+.video-track h3 {
   padding: 14px 16px;
 }
 
@@ -888,14 +910,16 @@ button:focus-visible {
   }
 
   .merch-grid,
-  .video-grid,
   .member-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .merch-grid,
-  .video-grid {
+  .merch-grid {
     grid-template-columns: 1fr;
+  }
+
+  .video-track {
+    grid-auto-columns: minmax(280px, 75vw);
   }
 }
 
@@ -925,7 +949,6 @@ button:focus-visible {
     max-width: min(92vw, 560px);
   }
 
-  .form-row,
   .tour-row,
   .press-list a {
     grid-template-columns: 1fr;
@@ -937,6 +960,24 @@ button:focus-visible {
 
   .member-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-social-links a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .video-carousel {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-arrow {
+    display: none;
+  }
+
+  .video-track {
+    grid-auto-columns: 88vw;
+    padding-bottom: 10px;
   }
 
 }

@@ -39,14 +39,13 @@
           </h1>
           <p class="one-liner">Good times metal is back and better than ever.</p>
           <div class="gumroad-placeholder">
-            <form class="signup-form" data-form="newsletter">
-              <label for="newsletter-email">Listen to our new single "Night Lights"</label>
-              <div class="form-row">
-                <input id="newsletter-email" name="email" type="email" placeholder="you@example.com" required>
-                <button type="submit">Send it</button>
-              </div>
-              <p class="form-status" role="status" aria-live="polite"></p>
-            </form>
+            <ul class="social-links hero-social-links" aria-label="Music platform links">
+              <li><a href="https://open.spotify.com/search/White%20Wizzard" target="_blank" rel="noreferrer">Spotify</a></li>
+              <li><a href="https://www.youtube.com/@WhiteWizzard" target="_blank" rel="noreferrer">YouTube</a></li>
+              <li><a href="https://www.instagram.com/whitewizzardband" target="_blank" rel="noreferrer">Instagram</a></li>
+              <li><a href="https://www.facebook.com/WhiteWizzardband" target="_blank" rel="noreferrer">Facebook</a></li>
+              <li><a href="https://music.apple.com/us/artist/white-wizzard/302063723" target="_blank" rel="noreferrer">Apple Music</a></li>
+            </ul>
           </div>
         </div>
 
@@ -68,7 +67,7 @@
 
       <section class="section intro-band" id="about" aria-labelledby="about-title">
         <div class="section-heading">
-          <h2 id="about-title">Meet the Band</h2>
+          <h2 id="about-title">The Band</h2>
         </div>
         <div class="member-grid" aria-label="Band members">
           <article class="member-card">
@@ -77,7 +76,6 @@
             </div>
             <h3>Tasos Lazaris</h3>
             <p class="member-role">Vocals</p>
-            <p class="member-bio">Short band member bio placeholder. Tasos can add a few lines about influences, history, favorite live moments, and what he brings to White Wizzard.</p>
           </article>
           <article class="member-card">
             <div class="member-portrait">
@@ -85,7 +83,6 @@
             </div>
             <h3>Sam Ruff</h3>
             <p class="member-role">Drums</p>
-            <p class="member-bio">Short band member bio placeholder. Sam can add a few lines about influences, history, favorite live moments, and what he brings to White Wizzard.</p>
           </article>
           <article class="member-card">
             <div class="member-portrait">
@@ -93,15 +90,13 @@
             </div>
             <h3>Jon Leon</h3>
             <p class="member-role">Bass</p>
-            <p class="member-bio">Short band member bio placeholder. Jon can add a few lines about influences, history, favorite live moments, and what he brings to White Wizzard.</p>
           </article>
           <article class="member-card">
             <div class="member-portrait">
               <img class="portrait-justin" src="white_wizzard_media/member-justin-goldat.png" alt="Justin Goldat performing live">
             </div>
             <h3>Justin Goldat</h3>
-            <p class="member-role">Guitars</p>
-            <p class="member-bio">Short band member bio placeholder. Justin can add a few lines about influences, history, favorite live moments, and what he brings to White Wizzard.</p>
+            <p class="member-role">Guitar</p>
           </article>
         </div>
       </section>
@@ -133,38 +128,75 @@
               title="White Wizzard on Spotify">
             </iframe>
           </div>
-          <ul class="social-links music-social-links" aria-label="Social media links">
-            <li><a href="https://open.spotify.com/search/White%20Wizzard" target="_blank" rel="noreferrer">Spotify</a></li>
-            <li><a href="https://www.youtube.com/@WhiteWizzard" target="_blank" rel="noreferrer">YouTube</a></li>
-            <li><a href="https://www.instagram.com/whitewizzardband" target="_blank" rel="noreferrer">Instagram</a></li>
-            <li><a href="https://www.facebook.com/WhiteWizzardband" target="_blank" rel="noreferrer">Facebook</a></li>
-            <li><a href="https://music.apple.com/us/artist/white-wizzard/302063723" target="_blank" rel="noreferrer">Apple Music</a></li>
-          </ul>
-          <div class="video-grid" aria-label="Music videos">
-            <article>
-              <div class="video-frame">
-                <iframe
-                  src="https://www.youtube.com/embed/FfnIBnz2_zw?si=VJ14IUVGDnMuFaKr"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen>
-                </iframe>
-              </div>
-              <h3>Over The Top</h3>
-            </article>
-            <article>
-              <div class="video-frame">
-                <iframe
-                  src="https://www.youtube.com/embed/uFdwfwQ-ijQ?si=WwikkaHKjmtmQaHP"
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen>
-                </iframe>
-              </div>
-              <h3>Storm the Shores</h3>
-            </article>
+          <div class="video-carousel" aria-label="Music videos">
+            <button class="carousel-arrow" type="button" data-carousel-control="prev" aria-label="Show previous videos">
+              <span aria-hidden="true">&larr;</span>
+            </button>
+            <div class="video-track" data-carousel-track tabindex="0">
+              <article>
+                <div class="video-frame">
+                  <iframe
+                    src="https://www.youtube.com/embed/FfnIBnz2_zw?si=VJ14IUVGDnMuFaKr"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <h3>Over The Top</h3>
+              </article>
+              <article>
+                <div class="video-frame">
+                  <iframe
+                    src="https://www.youtube.com/embed/uFdwfwQ-ijQ?si=WwikkaHKjmtmQaHP"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <h3>Storm the Shores</h3>
+              </article>
+              <article>
+                <div class="video-frame">
+                  <iframe
+                    src="https://www.youtube.com/embed/8SZSscGrCd8"
+                    title="The White Wizzard Story part 1-introduction"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <h3>The White Wizzard Story Part 1</h3>
+              </article>
+              <article>
+                <div class="video-frame">
+                  <iframe
+                    src="https://www.youtube.com/embed/Xh8vMEYqCeg"
+                    title="WHITE WIZZARD - Chasing Dragons (Official Music Video)"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <h3>Chasing Dragons</h3>
+              </article>
+              <article>
+                <div class="video-frame">
+                  <iframe
+                    src="https://www.youtube.com/embed/UcpvI3EJ_i4"
+                    title="White Wizzard - Break Out"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+                <h3>Break Out</h3>
+              </article>
+            </div>
+            <button class="carousel-arrow" type="button" data-carousel-control="next" aria-label="Show more videos">
+              <span aria-hidden="true">&rarr;</span>
+            </button>
           </div>
         </div>
       </section>
@@ -181,22 +213,6 @@
               <p>Booking and festival routing are open.</p>
             </div>
             <a href="#contact">Book the band</a>
-          </article>
-          <article class="tour-row">
-            <time datetime="2026">TBA</time>
-            <div>
-              <h3>West Coast run</h3>
-              <p>Placeholder row for confirmed club dates.</p>
-            </div>
-            <a href="#contact">Notify me</a>
-          </article>
-          <article class="tour-row">
-            <time datetime="2026">TBA</time>
-            <div>
-              <h3>Europe and UK</h3>
-              <p>Placeholder row for festival and support slots.</p>
-            </div>
-            <a href="#contact">Notify me</a>
           </article>
         </div>
       </section>
@@ -238,15 +254,25 @@
           <h2 id="press-title">Articles &amp; Reviews</h2>
         </div>
         <div class="press-list">
-          <a href="https://metalinsider.net/video/the-best-video-ever-of-the-week-white-wizzards-over-the-top" target="_blank" rel="noreferrer">
-            <span>Metal Insider</span>
-            <strong>The Best Video Ever Of The Week: White Wizzard's Over The Top</strong>
-            <em>2010</em>
+          <a href="https://www.classicrockhistory.com/top-10-white-wizzard-songs/" target="_blank" rel="noreferrer">
+            <span>Classic Rock History</span>
+            <strong>Top 10 White Wizzard Songs</strong>
+            <em>2021</em>
+          </a>
+          <a href="http://www.metalasylum.net/reviews/2018/mr18001.php" target="_blank" rel="noreferrer">
+            <span>Metal Asylum</span>
+            <strong>White Wizzard - Infernal Overdrive</strong>
+            <em>2018</em>
           </a>
           <a href="https://metalinjection.net/?p=33968" target="_blank" rel="noreferrer">
             <span>Metal Injection</span>
             <strong>White Wizzard Are The Kings Of The Highway</strong>
             <em>2013</em>
+          </a>
+          <a href="https://metalinsider.net/video/the-best-video-ever-of-the-week-white-wizzards-over-the-top" target="_blank" rel="noreferrer">
+            <span>Metal Insider</span>
+            <strong>The Best Video Ever Of The Week: White Wizzard's Over The Top</strong>
+            <em>2010</em>
           </a>
           <a href="https://www.angrymetalguy.com/white-wizzard-over-the-top-review/" target="_blank" rel="noreferrer">
             <span>Angry Metal Guy</span>
@@ -266,7 +292,9 @@
           <h2 id="contact-title">Contact</h2>
         </div>
         <div class="contact-layout">
-          <form class="contact-form" data-form="contact">
+          <form class="contact-form" name="contact" data-form="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact">
+            <input type="hidden" name="subject" value="White Wizzard Website Inquiry">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" autocomplete="name" required>
             <label for="email">Email</label>
