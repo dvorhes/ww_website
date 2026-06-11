@@ -39,6 +39,22 @@
           </h1>
           <p class="one-liner">Good times metal is back and better than ever.</p>
           <div class="gumroad-placeholder">
+            <form
+              class="signup-form"
+              name="night-lights-request"
+              data-form="night-lights-request"
+              method="POST"
+              data-netlify="true">
+              <input type="hidden" name="form-name" value="night-lights-request">
+              <input type="hidden" name="subject" value="Night Lights Single Request">
+              <input type="hidden" name="request" value='Please send me the White Wizzard single "Night Lights."'>
+              <label for="newsletter-email">Listen to our new single "Night Lights"</label>
+              <div class="form-row">
+                <input id="newsletter-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+                <button type="submit">Send it</button>
+              </div>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
             <ul class="social-links hero-social-links" aria-label="Music platform links">
               <li><a href="https://open.spotify.com/search/White%20Wizzard" target="_blank" rel="noreferrer">Spotify</a></li>
               <li><a href="https://www.youtube.com/@WhiteWizzard" target="_blank" rel="noreferrer">YouTube</a></li>

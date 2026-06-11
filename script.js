@@ -17,46 +17,39 @@ document.querySelectorAll("form[data-form]").forEach((form) => {
   form.addEventListener("submit", async (event) => {
     const status = form.querySelector(".form-status");
     const formType = form.getAttribute("data-form");
+    event.preventDefault();
 
-    if (formType === "contact") {
-      event.preventDefault();
-
-      const formData = new FormData(form);
-      if (status) {
-        status.textContent = "Sending your message...";
-      }
-
-      try {
-        const response = await fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString(),
-        });
-
-        if (!response.ok) {
-          throw new Error(`Form submission failed with status ${response.status}`);
-        }
-
-        form.reset();
-
-        if (status) {
-          status.textContent = "Message sent. White Wizzard will get back to you soon.";
-        }
-      } catch (error) {
-        if (status) {
-          status.textContent = "Could not send the message right now. Please try again.";
-        }
-      }
-
-      return;
-    }
+    const formData = new FormData(form);
+    const successMessage =
+      formType === "night-lights-request"
+        ? 'Request sent. White Wizzard will email "Night Lights" to you manually.'
+        : "Message sent. White Wizzard will get back to you soon.";
 
     if (status) {
-      status.textContent = "Message queued for the band. Replace this demo handler with your mail service.";
+      status.textContent = "Sending your message...";
     }
 
-    event.preventDefault();
-    form.reset();
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed with status ${response.status}`);
+      }
+
+      form.reset();
+
+      if (status) {
+        status.textContent = successMessage;
+      }
+    } catch (error) {
+      if (status) {
+        status.textContent = "Could not send the message right now. Please try again.";
+      }
+    }
   });
 });
 
