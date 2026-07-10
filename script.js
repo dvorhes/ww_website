@@ -16,14 +16,10 @@ navLinks.forEach((link) => {
 document.querySelectorAll("form[data-form]").forEach((form) => {
   form.addEventListener("submit", async (event) => {
     const status = form.querySelector(".form-status");
-    const formType = form.getAttribute("data-form");
     event.preventDefault();
 
     const formData = new FormData(form);
-    const successMessage =
-      formType === "night-lights-request"
-        ? 'Request sent. White Wizzard will email "Night Lights" to you manually.'
-        : "Message sent. White Wizzard will get back to you soon.";
+    const successMessage = "Message sent. White Wizzard will get back to you soon.";
 
     if (status) {
       status.textContent = "Sending your message...";

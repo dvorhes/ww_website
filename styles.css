@@ -261,20 +261,63 @@ a {
   margin-top: 30px;
 }
 
-.signup-form,
 .contact-form {
   display: grid;
   gap: 10px;
 }
 
-.signup-form {
-  padding: 16px;
+.night-lights-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: min(100%, 640px);
+  padding: 18px;
   border: 1px solid rgba(115, 255, 112, 0.54);
   border-radius: 6px;
   background:
     linear-gradient(135deg, rgba(20, 105, 42, 0.96), rgba(8, 21, 12, 0.94) 54%, rgba(132, 255, 82, 0.72)),
     #0b2512;
   box-shadow: 0 18px 50px rgba(86, 255, 62, 0.22);
+}
+
+.night-lights-card p {
+  margin: 0;
+  color: #f7f5ef;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.night-lights-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid #84ff52;
+  border-radius: 4px;
+  background: #050505;
+  color: #b9ff8b;
+  font-weight: 900;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.night-lights-button:hover,
+.night-lights-button:focus-visible {
+  border-color: #d7ffc5;
+  background: #84ff52;
+  color: #050505;
+  outline: none;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 520px) {
+  .night-lights-card {
+    flex-wrap: wrap;
+  }
 }
 
 .hero-video {
@@ -387,12 +430,6 @@ label {
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 8px;
 }
 
 input,
@@ -720,14 +757,16 @@ button:focus-visible {
 
 .hero-social-links {
   margin: 0;
+  flex-wrap: nowrap;
+  gap: 8px;
   justify-content: flex-start;
 }
 
 .hero-social-links a {
-  min-height: 52px;
+  min-height: 46px;
   align-items: center;
-  padding: 0 20px;
-  font-size: 0.95rem;
+  padding: 0 12px;
+  font-size: 0.78rem;
 }
 
 .video-carousel {
@@ -982,6 +1021,10 @@ button:focus-visible {
   .hero-social-links a {
     width: 100%;
     justify-content: center;
+  }
+
+  .hero-social-links {
+    flex-wrap: wrap;
   }
 
   .video-carousel {
