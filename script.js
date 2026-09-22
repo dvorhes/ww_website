@@ -76,3 +76,20 @@ document.addEventListener("click", (event) => {
   frame?.classList.add("is-playing");
   poster.hidden = true;
 });
+
+const albumLinks = document.querySelectorAll(".album-link");
+const spotifyPlayer = document.querySelector("#spotify-player");
+const nowPlaying = document.querySelector("#now-playing");
+
+albumLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || !spotifyPlayer) return;
+    event.preventDefault();
+    const title = link.dataset.albumTitle;
+    spotifyPlayer.src = `https://open.spotify.com/embed/album/${link.dataset.albumId}?utm_source=generator&theme=0`;
+    spotifyPlayer.title = `${title} by White Wizzard on Spotify`;
+    nowPlaying.textContent = title;
+    albumLinks.forEach((album) => album.removeAttribute("aria-current"));
+    link.setAttribute("aria-current", "true");
+  });
+});
