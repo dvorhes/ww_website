@@ -86,7 +86,8 @@ albumLinks.forEach((link) => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || !spotifyPlayer) return;
     event.preventDefault();
     const title = link.dataset.albumTitle;
-    spotifyPlayer.src = `https://open.spotify.com/embed/album/${link.dataset.albumId}?utm_source=generator&theme=0`;
+    const release = link.dataset.trackId ? `track/${link.dataset.trackId}` : `album/${link.dataset.albumId}`;
+    spotifyPlayer.src = `https://open.spotify.com/embed/${release}?utm_source=generator&theme=0`;
     spotifyPlayer.title = `${title} by White Wizzard on Spotify`;
     nowPlaying.textContent = title;
     albumLinks.forEach((album) => album.removeAttribute("aria-current"));

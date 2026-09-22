@@ -654,7 +654,7 @@ button:focus-visible {
 
 .album-strip {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 128px));
+  grid-template-columns: repeat(6, minmax(0, 128px));
   gap: 10px;
   justify-content: center;
   margin: 0 auto;
